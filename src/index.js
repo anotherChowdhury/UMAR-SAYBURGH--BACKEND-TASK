@@ -1,9 +1,13 @@
-import { ApolloServer, gql } from 'apollo-server-express'
+import { ApolloServer } from 'apollo-server-express'
 import express from 'express'
 import mongoose from 'mongoose'
 import UserTypeDefs from './graphql/types/user.type'
+import BlogTypeDefs from './graphql/types/blog.type'
+import CommentTypeDefs from './graphql/types/comment.type'
+import TagTypeDefs from './graphql/types/tag.type'
 import resolvers from './graphql/resolvers/index.resolver'
 import { DATABASE_URL } from './contants'
+import UserController from './controllers/user.controller'
 
 mongoose.connect(
   DATABASE_URL,
@@ -33,10 +37,8 @@ const Mutation = `
   }
 `
 
-console.log(UserTypeDefs)
-
 const server = new ApolloServer({
-  typeDefs: [Query, Mutation, UserTypeDefs],
+  typeDefs: [Query, Mutation, UserTypeDefs, BlogTypeDefs, CommentTypeDefs, TagTypeDefs],
   resolvers: resolvers
 })
 

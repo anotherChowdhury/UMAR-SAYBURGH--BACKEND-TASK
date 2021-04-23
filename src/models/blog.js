@@ -8,8 +8,13 @@ const blogSchema = new Schema({
     ref: 'User',
     type: Types.ObjectId
   },
+  title: {
+    type: String,
+    requied: true
+  },
   text: {
-    type: String
+    type: String,
+    required: true
   },
   comments: [
     {
