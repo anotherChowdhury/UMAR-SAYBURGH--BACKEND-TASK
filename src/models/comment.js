@@ -4,17 +4,17 @@ const { Types } = Schema
 
 const commentSchema = new Schema({
   _id: Types.ObjectId,
-  userId: {
+  user: {
     type: Types.ObjectId,
     ref: 'User'
   },
-  blogId: {
+  blog: {
     type: Types.ObjectId,
     ref: 'Blog'
   },
   comment: {
     type: String,
-    ref: 'User'
+    required: true
   }
 })
 

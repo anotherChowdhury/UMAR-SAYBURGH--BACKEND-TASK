@@ -1,7 +1,8 @@
 import { model, Schema } from 'mongoose'
 
+const { Types } = Schema
 const userSchema = new Schema({
-  _id: Schema.Types.ObjectId,
+  _id: Types.ObjectId,
   name: {
     type: String,
     required: true
@@ -14,7 +15,13 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  blogs: [
+    {
+      type: Types.ObjectId,
+      ref: 'Blog'
+    }
+  ]
 })
 
 export default model('User', userSchema)

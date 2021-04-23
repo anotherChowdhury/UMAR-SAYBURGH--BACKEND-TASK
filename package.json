@@ -1,0 +1,27 @@
+{
+  "name": "sayburghInterviewTest",
+  "version": "1.0.0",
+  "description": "Creating rest api for a  basic blog with comment feature",
+  "main": "./src/index.js",
+  "author": "Umar Faruk",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^2.23.0",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.13.15",
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js"
+  }
+}
