@@ -4,7 +4,7 @@ const { Types } = Schema
 
 const tagSchema = new Schema({
   _id: Types.ObjectId,
-  name: { type: String, required: true },
+  name: { type: String, required: true, unique: true },
   blogs: [
     {
       type: Types.ObjectId,

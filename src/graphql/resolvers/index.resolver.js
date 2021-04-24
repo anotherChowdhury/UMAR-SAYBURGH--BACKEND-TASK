@@ -12,17 +12,24 @@ export default {
     blog: BlogResolvers.getBlogbyComment,
     user: UserResolvers.getCommenter
   },
-
+  Tag: {
+    blogs: TagResolvers.getBlogsByTag
+  },
   Query: {
-    getUser: UserResolvers.getUserById,
+    login: UserResolvers.login,
+    me: UserResolvers.me,
     getBlog: BlogResolvers.getBlog,
-    getBlogs: BlogResolvers.getBlogs
+    getBlogs: BlogResolvers.getBlogs,
+    getBlogsByTags: BlogResolvers.getBlogsByTags,
+    getBlogsByTag: TagResolvers.getBlogsByTag
   },
 
   Mutation: {
-    createUser: UserResolvers.createUser,
+    register: UserResolvers.register,
     createBlog: BlogResolvers.createBlog,
+    updateBlog: BlogResolvers.updateBlog,
     createTag: TagResolvers.createTag,
-    createComment: CommentResolvers.createComment
+    createComment: CommentResolvers.createComment,
+    updateComment: CommentResolvers.updateComment
   }
 }

@@ -5,6 +5,9 @@ type Tag {
     blogs:[Blog]
 }
 
+extend type Query {
+    getBlogsByTag(tag:String!):[Blog]
+}
 extend type Mutation {
     createTag: Tag!
 }

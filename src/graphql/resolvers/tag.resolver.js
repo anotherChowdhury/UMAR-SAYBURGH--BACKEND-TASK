@@ -12,5 +12,13 @@ export default {
   },
   createTag: async (_, { name }) => {
     return await tagController.createTag(name)
+  },
+  getBlogsByTag: async (_, { tag }) => {
+    console.log(tag)
+    const tagObject = await tagController.getTagByName(tag)
+    console.log(tagObject)
+    if (!tagObject) throw new Error('Tag not found')
+
+    return await tagController.getBlogsByTag(tagObject)
   }
 }

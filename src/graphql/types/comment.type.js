@@ -6,7 +6,8 @@ type Comment {
     comment: String!
 }
 extend type Mutation{
-    createComment(userId:ID!,blogId:ID!,comment:String):Comment
+    createComment(blogId:ID!,comment:String):Comment
+    updateComment(commentId:ID!,comment:String):Comment
 }
 
 `
